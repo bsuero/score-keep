@@ -1,9 +1,8 @@
-import { greetUser, name } from "../imports/utils";
-import { add } from "../imports/math";
+import { react } from '../node_modules/react';
+import { reactDOM } from "../node_modules/react-dom";
+import { meteor } from "meteor/meteor";
 
-console.log(greetUser());
-console.log(name);
-
-console.log(add(3, 4));
-
-console.log('log from /client/main.js');
+meteor.startup(function (){
+    let jxs = <p>this is from main.js</p>;
+    reactDOM.render(jxs, document.getElementById('app'));
+});

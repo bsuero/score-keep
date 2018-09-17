@@ -1,8 +1,9 @@
-import { react } from '../node_modules/react';
-import { reactDOM } from "../node_modules/react-dom";
-import { meteor } from "meteor/meteor";
+import React from '../node_modules/react';
+import ReactDOM from "../node_modules/react-dom";
+import { Meteor } from "meteor/meteor";
 
-meteor.startup(function (){
-    let jxs = <p>this is from main.js</p>;
-    reactDOM.render(jxs, document.getElementById('app'));
+Meteor.startup(function (){
+    let name = 'someone';
+    let jxs = <p>hello {name}, this is from main.js</p>;
+    ReactDOM.render(jxs, document.getElementById('app'));
 });

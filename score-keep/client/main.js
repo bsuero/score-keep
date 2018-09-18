@@ -1,6 +1,13 @@
 import React from '../node_modules/react';
 import ReactDOM from "../node_modules/react-dom";
 import { Meteor } from "meteor/meteor";
+import {Tracker} from 'meteor/tracker';
+import { Players } from '../imports/api/players';
+
+
+Tracker.autorun(function(){
+    console.log('Players list',Players.find().fetch());
+});
 
 const players = [{
     _id: '1',
